@@ -1,5 +1,3 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import {
   Card,
   CardContent,
@@ -18,18 +16,30 @@ import {
 } from "@/components/ui/carousel";
 
 function App() {
-  
+  // nav part i guess
   return (
-    <section className="dark bg-background text-foreground flex flex-col flex-1 min-h-0 ">
-      <nav>
-        <ul className='text-2xl flex gap-5 fixed z-10 w-full bg-[#717274B3] justify-end px-5 py-2'>
-          <li><a href="#home">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Cart</a></li>
-          <li><a href="">Log Out</a></li>
+    <section className="bg-black/80 flex flex-col flex-1 min-h-0 ">
+      <nav className="flex justify-between items-center bg-white">
+        <div className="flex gap-5 items-center py-2">
+          <img
+            className="w-[70px] h-[70px]"
+            src="https://prod-hk.oss-eu-central-1.aliyuncs.com/default/20240925_131351_750890____1_____1200x1200.jpg?x-oss-process=image/format,webp"
+            alt="try"
+          />
+          <b className="text-nowrap">JOE FIGS</b>
+        </div>
+        <ul className="text-xl flex gap-5  px-5 py-2">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/cart">Cart</a>
+          </li>
+          <li>
+            <a href="/orderdetails">Order Details</a>
+          </li>
         </ul>
       </nav>
-      <span id="home">{/* For home navigation only*/}</span>
       <div className="w-full h-[300px] px-20 mt-20">
         {/* Advertisement banner */}
         <Carousel>
