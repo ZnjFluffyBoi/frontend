@@ -23,14 +23,14 @@ function App() {
         <div className="flex gap-5 items-center py-2">
           <img
             className="w-[70px] h-[70px]"
-            src="https://prod-hk.oss-eu-central-1.aliyuncs.com/default/20240925_131351_750890____1_____1200x1200.jpg?x-oss-process=image/format,webp"
+            src="https://tse3.mm.bing.net/th?id=OIG1.9HW8GFK4jDQYuVttnrAt&pid=ImgGn"
             alt="try"
           />
-          <b className="text-nowrap">JOE FIGS</b>
+          {/* <b className="text-nowrap">JOE FIGS</b> */}
         </div>
         <ul className="text-xl flex gap-5  px-5 py-2">
           <li>
-            <a href="/">Home</a>
+            <a href="/app">Home</a>
           </li>
           <li>
             <a href="/cart">Cart</a>
@@ -46,62 +46,19 @@ function App() {
           <CarouselContent>
             <CarouselItem>
               <img
-                src="https://img.lazcdn.com/g/ff/kf/S810a6631abff4688b68626dc04ca996cK.jpg_720x720q80.jpg"
-                className="w-full h-[300px]"
-                alt="bannir"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5bgBElHPioCXkWa0YLxYbFmrrjvjF9yGdpw&s"
-                className="w-full h-[300px]"
-                alt="bannir"
-              />
-            </CarouselItem>
-            <CarouselItem>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5bgBElHPioCXkWa0YLxYbFmrrjvjF9yGdpw&s"
+                src="https://cdn.shopify.com/s/files/1/0594/3210/8209/files/banner_c93b7715-3e60-497a-97a4-8880cc3f5274.jpg?v=1648803380"
                 className="w-full h-[300px]"
                 alt="bannir"
               />
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
       </div>
         {/* Products */}
         <div className="mt-10 flex flex-col p-5 gap-5">
-        <b className="text-4xl text-center text-pink-600">POWER PUFF FIGURES</b>
+        <b className="text-4xl text-center text-zinc-950">SPACE MOLLY</b>
         <section className="flex gap-5 flex-1 min-h-0 flex-wrap justify-center">
-          <Card className="w-[350px] h-[520px] bg-pink-400">
-            <CardHeader>
-              <CardTitle>
-                <img
-                  src="https://prod-eurasian-res.popmart.com/default/20240304_164111_296715__1200x1200.jpg"
-                  className="w-full h-[300px]"
-                  alt="TRY"
-                ></img>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-white">
-              <p>The Vigilance</p>
-              <p>PHP 2000.00</p>
-              <p>
-                The silver-blue part of magnetic mask has a metallic pearlescent
-                effect
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button className="bg-white text-black">Add to Cart</Button>
-            </CardFooter>
-          </Card>
-        </section>
-        </div>
-        <div className="mt-10 flex flex-col p-5 gap-5">
-        <b className="text-4xl text-center text-gray-400">SPACE MOLLY FIGURES</b>
-        <section className="flex gap-5 flex-1 min-h-0 flex-wrap justify-center">
-          <Card className="w-[350px] h-[520px] bg-gray-700">
+          <Card className="w-[350px] h-[520px] bg-sky-800">
             <CardHeader>
               <CardTitle>
                 <img
@@ -112,44 +69,28 @@ function App() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-white">
-              <p>The Vigilance</p>
-              <p>PHP 2000.00</p>
+              <p>ZnjBigBoi</p>  
+              <p>PHP 200,000</p>
               <p>
-                The silver-blue part of magnetic mask has a metallic pearlescent
-                effect
+                COLLECTORS ITEM TO PAR
               </p>
             </CardContent>
-            <CardFooter>
-              <Button className="bg-white text-black">Add to Cart</Button>
+            <CardFooter className="gap-2">
+              <Button className="bg-white text-black ">Add to Cart</Button>
+              <Button className="bg-white text-black">Edit</Button>
+              <Button className="bg-white text-black">Remove</Button> 
             </CardFooter>
           </Card>
         </section>
+        </div>
+        <div className="mt-10 flex flex-col p-5 gap-5">
+        {/* <b className="text-4xl text-center text-gray-400">SPACE MOLLY FIGURES</b> */}
+        <section className="flex gap-5 flex-1 min-h-0 flex-wrap justify-center">
+        </section>
       </div>
       <div className="mt-10 flex flex-col p-5 gap-5">
-        <b className="text-4xl text-center">SKULL PANDA FIGURES</b>
+        {/* <b className="text-4xl text-center">SKULL PANDA FIGURES</b> */}
         <section className="flex gap-5 flex-1 min-h-0 flex-wrap justify-center">
-          <Card className="w-[350px] h-[520px] bg-zinc-800">
-            <CardHeader>
-              <CardTitle>
-                <img
-                  src="https://u-mercari-images.mercdn.net/photos/m29617180333_1.jpg?width=512&height=512&format=pjpg&auto=webp&fit=crop&_=1720234075"
-                  className="w-full h-[300px]"
-                  alt="TRY"
-                ></img>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-white">
-              <p>The Vigilance</p>
-              <p>PHP 2000.00</p>
-              <p>
-                The silver-blue part of magnetic mask has a metallic pearlescent
-                effect
-              </p>
-            </CardContent>
-            <CardFooter>
-              <Button className="bg-white text-black">Add to Cart</Button>
-            </CardFooter>
-          </Card>
         </section>
       </div>
     </section>

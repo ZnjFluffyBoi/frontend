@@ -4,11 +4,16 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/cart.jsx";
 import OrderDetails from "./pages/orderdetails.jsx";
+import LoginPage from "./pages/login.jsx";
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path:"/",
+    element: <LoginPage />
+  },
+  {
+    path: "/app",
     element: <App />,
   },
   {
