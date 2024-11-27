@@ -5,7 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Cart from "./pages/cart.jsx";
 import OrderDetails from "./pages/orderdetails.jsx";
 import LoginPage from "./pages/login.jsx";
+import { QueryClient, QueryClientProvider } from "react-query";
 
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -27,5 +29,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
 );
