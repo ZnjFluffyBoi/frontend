@@ -1,26 +1,26 @@
 import { baseURL } from "."
 
-export const registerAPI = async (postData) => {
-    const response = await fetch(`${baseURL}/auth/users/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            // Authorization: 
-        },
-        body: JSON.stringify(postData)
-    })
+// export const registerAPI = async (postData) => {
+//     const response = await fetch(`${baseURL}/auth/users/`, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             // Authorization: 
+//         },
+//         body: JSON.stringify(postData)
+//     })
 
-    const res = await response.json()
+//     const res = await response.json()
 
-    console.log('response',res)
+//     console.log('response',res)
 
-    if(res.ok){
-        return res.data
-    }
+//     if(res.ok){
+//         return res.data
+//     }
 
-    throw new Error('something went wrong.') 
+//     throw new Error('something went wrong.') 
 
-}
+// }
 
 export const loginAPI = async (postData) => {
     const response = await fetch(`${baseURL}/auth/login`, {
@@ -33,10 +33,15 @@ export const loginAPI = async (postData) => {
     return res
 }
 
-export const registerAPIAPI = async (postData) => {
+export const registerAPI = async (postData) => {
+    console.log('wew',postData)
     const response = await fetch(`${baseURL}/auth/users/`, {
         method: "POST",
-        body: postData,
+        headers : {
+            'Content-Type' : 'application/json',
+           
+        },
+        body: JSON.stringify(postData),
     })
 
     console.log(response.status)

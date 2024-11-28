@@ -15,8 +15,10 @@ import {
 import { retrieveProducts } from "./api/products";
 import { useEffect , useState } from "react";
 import { ROOT_URL } from "./api";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate()
   const [rows,setRows] = useState([])
 
   useEffect(() =>{
@@ -68,10 +70,14 @@ function App() {
               Cart
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="/orderdetails" className="text-purple-300 hover:text-purple-100 transition-all duration-300">
               Order Details
             </a>
+          </li> */}
+          <li>
+            <Button className="bg-purple-600/40 hover:bg-purple-600/60 text-white border border-purple-500/30 hover:border-purple-400 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20" onClick={() =>{sessionStorage.clear()
+              navigate('/')}}>Log Out</Button>
           </li>
         </ul>
       </nav>

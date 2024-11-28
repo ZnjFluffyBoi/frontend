@@ -17,9 +17,15 @@ import {useRef , useEffect} from "react"
 
 export default function LoginPage() {
 
-  const usernameRef = useRef(null)
+    const usernameRef = useRef(null)
     const passwordRef = useRef(null)
+    // const emailRef = useRef(null)
     const navigate = useNavigate()
+    
+    const emailregRef = useRef(null)
+    const userregRef = useRef(null)
+    const passwordregRef = useRef(null)
+    const passwordConfirmationRef = useRef(null)
 
     useEffect(() => {
         if (sessionStorage.getItem("accessToken")) {
@@ -43,20 +49,17 @@ export default function LoginPage() {
 
     const handleLogin = () => {
         const formData = new FormData()
-        formData.append("username", usernameRef.current.value)
-        formData.append("password", passwordRef.current.value)
-        console.log(usernameRef.current.value)
-        console.log(passwordRef.current.value)
+        formData.append("username", userregRef.current.value)
+        formData.append("password", passwordregRef.current.value )
+        console.log(formData)
         loginMutation.mutate(formData)
     }
 
-    const registerMustation = useMutation({
+    const registerMutation = useMutation({
       mutationFn: registerAPI,
       onSuccess: (data) => {
           if (data.ok) {
-              console.log('Username: ', usernameRef.current.value)
-              console.log('Password: ', passwordRef.current.value)
-              handleLogin()
+            handleLogin()
           }
           else {
               console.log("Something went wrong...")
@@ -65,15 +68,14 @@ export default function LoginPage() {
   })
 
   const handleRegister = () => {
-      const formData = new FormData()
-      formData.append("username", usernameRef.current.value)
-      formData.append("email", emailRef.current.value)
-      formData.append("password", passwordRef.current.value)
-      formData.append("password_confirmation", passwordConfirmationRef.current.value)
-      console.log(usernameRef.current.value)
-      console.log(emailRef.current.value)
-      console.log(passwordRef.current.value)
-      registerMustation.mutate(formData)
+      const formData = {
+        username: userregRef.current.value,
+        email: emailregRef.current.value,
+        password : passwordregRef.current.value,
+        password_confirmation: passwordConfirmationRef.current.value
+      }
+
+      registerMutation.mutate(formData)
   }
 
   return (
@@ -141,7 +143,7 @@ export default function LoginPage() {
                     id="user"
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Enter your Cosmic Name"
-                    ref={usernameRef}
+                    ref={userregRef}
                   />
                 </div>
                 <div className="space-y-2">
@@ -151,7 +153,7 @@ export default function LoginPage() {
                     type="password"
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Enter your StarCode" 
-                    ref={passwordRef}
+                    ref={passwordregRef}
                   />
                 </div>
               </CardContent>
@@ -163,7 +165,8 @@ export default function LoginPage() {
             </Card>
           </TabsContent>
           <TabsContent value="register">
-            <Card className="bg-slate-800/30 backdrop-blur-md border border-purple-500/20 shadow-xl shadow-purple-500/10">
+            <Card className="bg-s
+            late-800/30 backdrop-blur-md border border-purple-500/20 shadow-xl shadow-purple-500/10">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Join the Galaxy
@@ -180,6 +183,7 @@ export default function LoginPage() {
                     type="email"
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Your email address"
+                    ref={emailregRef}
                   />
                 </div>
                 <div className="space-y-2">
@@ -188,6 +192,7 @@ export default function LoginPage() {
                     id="createusername" 
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Choose your cosmic identity"
+                    ref={userregRef}
                   />
                 </div>
                 <div className="space-y-2">
@@ -197,6 +202,7 @@ export default function LoginPage() {
                     type="password"
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Your secret starcode"
+                    ref={passwordregRef}
                   />
                 </div>
                 <div className="space-y-2">
@@ -206,11 +212,12 @@ export default function LoginPage() {
                     type="password"
                     className="bg-slate-900/50 border-purple-500/30 text-purple-100 placeholder:text-purple-300/50 focus:border-purple-400 transition-all duration-300"
                     placeholder="Confirm starcode"
+                    ref={passwordConfirmationRef}
                   />
                 </div>
               </CardContent>
               <CardFooter>
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg shadow-purple-500/20">
+              <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg shadow-purple-500/20" onClick={handleRegister}>
                   SAVE
                 </Button>
               </CardFooter>

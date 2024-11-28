@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { verifyToken } from "../API/auth";
+import { verifyToken } from "../api/auth";
 
 export default function isAuthenTicated(WrappedComponent) {
   return () => {

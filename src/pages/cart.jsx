@@ -54,10 +54,14 @@ function App() {
               Cart
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="/orderdetails" className="text-purple-300 hover:text-purple-100 transition-all duration-300">
               Order Details
             </a>
+          </li> */}
+          <li>
+            <Button className="" onClick={() =>{sessionStorage.clear()
+              navigate('/')}}>Log Out</Button>
           </li>
         </ul>
       </nav>
