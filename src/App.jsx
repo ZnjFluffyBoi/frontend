@@ -29,6 +29,26 @@ function App() {
     })
   },[])
 
+  const handleRemove = async (id) => {
+    console.log (id)
+    try {
+      const response = await fetch(`${ROOT_URL}/api/products/`, {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({id: id}),
+      });
+      
+      if (response.ok) {
+
+        setRows(rows.filter(item => item.id !== id));
+      } else {
+        console.error('Failed to delete product');
+      }
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
+
   return (
     <section className="relative flex flex-col min-h-screen text-white overflow-hidden">
       <div className="fixed inset-0">
@@ -128,7 +148,11 @@ function App() {
                  <CardFooter className="gap-2">
                    <Button className="bg-purple-600 text-white hover:bg-purple-700">Add to Cart</Button>
                    <Button className="bg-slate-700 text-white hover:bg-slate-600">Edit</Button>
-                   <Button className="bg-red-600 text-white hover:bg-red-700">Remove</Button>
+                   <Button 
+                     className="bg-red-600 text-white hover:bg-red-700"
+                     onClick={() => handleRemove(item.id)}
+                   > Remove
+                   </Button>
                  </CardFooter>
                </Card>
             ))}
